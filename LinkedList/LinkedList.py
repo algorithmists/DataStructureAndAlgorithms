@@ -146,6 +146,31 @@ class LinkedList(object):
         self.head = previous
         self.print_list()
 
+  
+##
+##Find the middle element of a list.
+##The other approach of finding the middle elemnet is traverse the whole list and find the ccount and then divide it by 2.
+## Odd = (n+1)/2 , Even = (n/2) .  Traverse again till the count reaches. Complexicity = O (n) + O (n/2).
+## This approach improves over the previous approach by find the middle element in just one traversal. One auxillary apace required to maintain a slow-pointer.
+## Time complexicity is O(n) for traversing the whole list and Space Complexicity O(1)
+##
+##
+
+
+
+    def find_middle_node(self):
+
+            slow_pointer = self.head
+            fast_pointer = self.head.getNext()
+
+
+            while fast_pointer!= None:
+                slow_pointer = slow_pointer.getNext()
+                fast_pointer = fast_pointer.getNext().getNext()
+
+            print 'middle '
+
+            print slow_pointer.getData()
 
 
 
